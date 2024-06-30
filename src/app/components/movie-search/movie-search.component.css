@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  mat-card {
+    width: 200px;
+    margin: 10px;
+  }
+  
+  mat-card img {
+    height: 300px;
+    object-fit: cover;
+  }
+  

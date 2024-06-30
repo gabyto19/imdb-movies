@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span>IMDB Movie Search</span>
+</mat-toolbar>
+
+<div class="container">
+  <mat-form-field>
+    <mat-label>Movie Title</mat-label>
+    <input matInput [(ngModel)]="title">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="search()">Search</button>
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div class="movies">
+  <mat-card *ngFor="let movie of movies$ | async">
+    <mat-card-header>
+      <mat-card-title>{{ movie.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="movie.image" alt="{{ movie.title }}">
+    <mat-card-content>
+      <p>{{ movie.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
